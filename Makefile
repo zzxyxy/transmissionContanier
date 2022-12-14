@@ -1,2 +1,2 @@
 all:
-	docker build -t zxyxy/transmission:0.1.0 .
+	docker build -t zxyxy/transmission:0.2.0 .

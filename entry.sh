@@ -4,7 +4,7 @@ echo off
 [ -z "$TRANS_GID" ] && echo "TRANS_GID is not set" && exit 1
 
 
-echo $TRANS_UID
+echo $TRANS_UIDcode
 echo $TRANS_GID
 
 getent group $TRANS_GID
@@ -22,6 +22,10 @@ else
     runuser=$(id -u $TRANS_UID -u -n)
 fi
 
+mkdir -p /tmp/transmission
+cp /etc/transmission/settings.json /tmp/transmission
+chmod 777 -R /tmp/transmission
+
 mkdir -p /data
 
-su -l $runuser -c '/usr/bin/transmission-daemon -f --log-error -g /etc/transmission-daemon'
+su -l $runuser -c '/usr/bin/transmission-daemon -f --log-error -g /tmp/transmission'
