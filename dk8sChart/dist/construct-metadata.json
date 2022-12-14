@@ -1,0 +1,1 @@
+{"version":"1.0.0","resources":{"transmission":{"path":"torrent-z/ingress"},"torrent":{"path":"torrent-z/torrent-pv"},"torrent-pvc":{"path":"torrent-z/torrent-pvc"},"torrent-z":{"path":"torrent-z/namespace"}}}
